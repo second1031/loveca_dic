@@ -1,0 +1,749 @@
+/* General Body and Container Styles */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 30px;
+}
+
+.container {
+    width: 98%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Controls Area */
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls label {
+    font-size: 1em;
+    color: #555;
+}
+
+.controls input[type="number"] {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Pack Selection Area (for index.html) */
+#packSelectionArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.pack-thumbnail {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pack-thumbnail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
+
+.pack-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    pointer-events: none;
+}
+
+.pack-thumbnail p {
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+    margin: 0;
+}
+
+/* History Area (Modified for display total only) */
+.history-area {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.history-area h2 {
+    /* style="display: none;" がHTMLに適用されるため、CSSでは直接非表示にしない */
+}
+
+#clearHistoryButton {
+    background-color: #dc3545;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#clearHistoryButton:hover {
+    background-color: #c82333;
+}
+
+#totalPacksOpened, #totalAmountSpent {
+    font-size: 1em;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#historyDisplayArea {
+    /* style="display: none;" がHTMLに適用されるため、CSSでは直接非表示にしない */
+}
+
+
+/* Card Display Area (for open.html) */
+#cardDisplayArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    min-height: 150px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.pack-container {
+    border: 2px solid #a0a0a0;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: calc(100% - 30px);
+    max-width: 900px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pack-title {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.3em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.pack-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    margin-top: 15px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: calc(20% - 8px);
+    min-width: 110px;
+    max-width: 160px;
+    box-sizing: border-box;
+}
+
+.card-image-wrapper {
+    width: 100%;
+    padding-top: 140%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.card-name {
+    font-weight: bold;
+    color: #333;
+    margin: 1px 0;
+    font-size: 0.8em;
+    word-break: break-word;
+    line-height: 1.2;
+}
+
+.card-number {
+    font-size: 0.75em;
+    color: #666;
+    margin: 0 0 1px;
+    line-height: 1.2;
+}
+
+.card-rarity {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0px 3px;
+    border-radius: 3px;
+    font-size: 0.6em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* レアリティごとの色 */
+.rarity-N { border-color: #aaa; background-color: #eee; }
+.rarity-R { border-color: #88b; background-color: #ddeeff; }
+.rarity-P { border-color: #b88; background-color: #ffeeee; }
+.rarity-L { border-color: #8b8; background-color: #eeffee; }
+.rarity-R＋ { border-color: #ffcc00; background-color: #fffacd; }
+.rarity-PE { border-color: #ff99ff; background-color: #ffe0ff; }
+.rarity-P＋ { border-color: #9933ff; background-color: #e6ccff; }
+.rarity-PE＋ { border-color: #00cccc; background-color: #e0ffff; }
+.rarity-SEC { border-color: #ff6600; background-color: #ffe8cc; }
+.rarity-SECE { border-color: #cc00cc; background-color: #f2ccf2; }
+.rarity-LLE { border-color: #0099ff; background-color: #ccedff; }
+
+
+/* Share Area */
+.share-area {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#tweetResultButton {
+    background-color: #1DA1F2;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tweetResultButton:hover {
+    background-color: #0c85d0;
+}
+
+
+/* Collection Area (Card Encyclopedia - for open.html) */
+.collection-area {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.collection-area h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#completionRates {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+}
+
+#completionRates p {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 3px 0;
+}
+
+#cardCollectionDisplayArea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.collection-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px;
+    text-align: center;
+    background-color: #fefefe;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(20% - 8px);
+    min-width: 70px;
+    max-width: 120px;
+    box-sizing: border-box;
+    transition: opacity 0.3s, filter 0.3s; /* 所持枚数変更時のアニメーション */
+}
+
+.collection-card .card-image-wrapper {
+    width: 100%;
+    padding-top: 140%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.collection-card .card-name {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 1px 0;
+    line-height: 1.1;
+}
+
+.collection-card .card-number {
+    font-size: 0.65em;
+    color: #666;
+    margin: 0 0 1px;
+    line-height: 1.1;
+}
+
+.collection-card .card-rarity {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    padding: 0px 3px;
+    font-size: 0.55em;
+    border-radius: 3px;
+    background-color: #000000cc;
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* 所持していないカードのスタイル */
+.collection-card.not-owned {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+/* 所持枚数表示と+-ボタンのスタイル */
+.collection-card .owned-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px; /* 上部の余白 */
+}
+
+.collection-card .owned-count-display {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #333;
+    min-width: 25px; /* 数字が2桁になってもレイアウトが崩れないように */
+    text-align: center;
+    margin: 0 3px; /* ボタンとの間の余白 */
+    background-color: #e0ffe0; /* 背景色 */
+    border-radius: 3px;
+    padding: 1px 2px;
+}
+
+.collection-card .count-button {
+    background-color: #4CAF50; /* 緑 */
+    color: white;
+    border: none;
+    border-radius: 50%; /* 円形に */
+    width: 20px; /* ボタンのサイズ */
+    height: 20px;
+    font-size: 1.2em; /* ボタン内の文字サイズ */
+    line-height: 1; /* 行の高さ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.collection-card .count-button.minus {
+    background-color: #f44336; /* 赤 */
+}
+
+.collection-card .count-button:hover {
+    filter: brightness(1.1); /* ホバーで少し明るく */
+}
+
+/* レアリティごとの色（所持カードリスト用） */
+.collection-card.rarity-N { border-color: #aaa; background-color: #eee; }
+.collection-card.rarity-R { border-color: #88b; background-color: #ddeeff; }
+.collection-card.rarity-P { border-color: #b88; background-color: #ffeeee; }
+.collection-card.rarity-L { border-color: #8b8; background-color: #eeffee; }
+.collection-card.rarity-R＋ { border-color: #ffcc00; background-color: #fffacd; }
+.collection-card.rarity-PE { border-color: #ff99ff; background-color: #ffe0ff; }
+.collection-card.rarity-P＋ { border-color: #9933ff; background-color: #e6ccff; }
+.collection-card.rarity-PE＋ { border-color: #00cccc; background-color: #e0ffff; }
+.collection-card.rarity-SEC { border-color: #ff6600; background-color: #ffe8cc; }
+.collection-card.rarity-SECE { border-color: #cc00cc; background-color: #f2ccf2; }
+.collection-card.rarity-LLE { border-color: #0099ff; background-color: #ccedff; }
+
+
+/* Back to Select Page Button */
+.back-button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Adjustments (Override existing ones with more refined settings) */
+
+/* For smaller tablets and large phones (e.g., max-width 768px) */
+@media (max-width: 768px) {
+    body {
+        margin-top: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    h2 {
+        font-size: 1.3em;
+        margin-top: 25px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .controls label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .controls input[type="number"] {
+        width: 100%;
+        max-width: 120px;
+    }
+    #openPackButton {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .pack-thumbnail {
+        width: calc(33.33% - 15px);
+        min-width: 100px;
+        padding: 8px;
+    }
+    .pack-thumbnail img {
+        margin-bottom: 5px;
+    }
+    .pack-thumbnail p {
+        font-size: 0.9em;
+    }
+
+    /* Card display in open.html */
+    .pack-container {
+        padding: 10px;
+        width: calc(100% - 20px);
+        max-width: 700px;
+    }
+    .pack-title {
+        font-size: 1.1em;
+        padding-bottom: 5px;
+    }
+    .pack-cards {
+        gap: 6px;
+        padding: 6px;
+    }
+    .card {
+        width: calc(33.33% - 6px);
+        min-width: 90px;
+        max-width: 130px;
+        padding: 3px;
+    }
+    .card-name {
+        font-size: 0.7em;
+    }
+    .card-number {
+        font-size: 0.6em;
+    }
+    .card-rarity {
+        font-size: 0.5em;
+    }
+
+    /* Collection area */
+    .collection-card {
+        width: calc(33.33% - 8px);
+        min-width: 60px;
+        max-width: 100px;
+        padding: 3px;
+        padding-top: 18px;
+        min-height: 140px;
+    }
+    .collection-card .card-name {
+        font-size: 0.65em;
+    }
+    .collection-card .card-number {
+        font-size: 0.55em;
+    }
+    .collection-card .card-rarity,
+    .collection-card .owned-count-display { /* 修正 */
+        font-size: 0.5em;
+    }
+    #completionRates {
+        padding: 8px;
+    }
+    #completionRates p {
+        font-size: 0.9em;
+    }
+    #tweetResultButton, .back-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .collection-card .count-button { /* 修正 */
+        width: 18px;
+        height: 18px;
+        font-size: 1em;
+    }
+}
+
+/* For mobile phones (e.g., max-width 480px) */
+@media (max-width: 480px) {
+    body {
+        margin-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .container {
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+    h1 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 1.1em;
+        margin-top: 20px;
+    }
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .controls {
+        gap: 6px;
+    }
+    .controls input[type="number"],
+    #openPackButton {
+        max-width: none;
+    }
+
+    .pack-thumbnail {
+        width: calc(50% - 10px);
+        min-width: unset;
+        padding: 5px;
+    }
+    .pack-thumbnail p {
+        font-size: 0.8em;
+    }
+
+    /* Card display in open.html */
+    .pack-container {
+        padding: 8px;
+        width: calc(100% - 16px);
+    }
+    .pack-title {
+        font-size: 1em;
+        padding-bottom: 3px;
+    }
+    .pack-cards {
+        gap: 5px;
+        padding: 5px;
+    }
+    .card {
+        width: calc(50% - 5px);
+        min-width: unset;
+        padding: 2px;
+    }
+    .card-name {
+        font-size: 0.6em;
+    }
+    .card-number {
+        font-size: 0.55em;
+    }
+    .card-rarity {
+        font-size: 0.45em;
+        top: 1px;
+        right: 1px;
+    }
+
+    /* Collection area */
+    .collection-card {
+        width: calc(50% - 8px);
+        min-width: unset;
+        padding: 2px;
+        padding-top: 15px;
+        min-height: 120px;
+    }
+    .collection-card .card-name {
+        font-size: 0.6em;
+    }
+    .collection-card .card-number {
+        font-size: 0.5em;
+    }
+    .collection-card .card-rarity,
+    .collection-card .owned-count-display { /* 修正 */
+        font-size: 0.45em;
+        top: 1px;
+        left: 1px;
+        right: 1px;
+    }
+    #completionRates {
+        padding: 5px;
+    }
+    #completionRates p {
+        font-size: 0.8em;
+    }
+    #tweetResultButton, .back-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .history-area {
+        padding: 10px;
+    }
+    #clearHistoryButton {
+        padding: 6px 12px;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
+    #totalPacksOpened, #totalAmountSpent {
+        font-size: 0.9em;
+    }
+    .collection-card .count-button { /* 修正 */
+        width: 16px;
+        height: 16px;
+        font-size: 0.9em;
+    }
+    .collection-card .owned-count-display { /* 修正 */
+        font-size: 0.7em;
+    }
+}
