@@ -11,17 +11,54 @@
         <h1>ラブライブ！カード図鑑</h1>
         
         <div class="collection-area">
-            <h2 id="collectionTitle">カード図鑑</h2> <div id="completionRates">
+            <h2 id="collectionTitle">カード図鑑</h2>
+            
+            <div id="completionRates">
                 <p>所持カード数: <span id="overallCompletionCount">0</span>枚 / 全カード: <span id="totalUniqueCards">0</span>枚</p>
                 <p>全体コンプリート率: <span id="overallCompletion">0%</span></p>
-                <button id="resetCollectionButton">所持カード枚数を全てリセット</button> </div>
+            </div>
+
+            <div class="feature-controls">
+                <div class="filter-controls">
+                    <h3>絞り込み</h3>
+                    <div class="filter-item">
+                        <label for="filterName">カード名:</label>
+                        <input type="text" id="filterName" placeholder="カード名を入力...">
+                    </div>
+                    <div class="filter-item">
+                        <label for="filterProduct">収録商品:</label>
+                        <select id="filterProduct">
+                            <option value="">すべて</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="filterType">カードタイプ:</label>
+                        <select id="filterType">
+                            <option value="">すべて</option>
+                        </select>
+                    </div>
+                    <button id="resetFilterButton">絞り込みをリセット</button>
+                </div>
+
+                <div class="data-controls">
+                    <h3>データ管理</h3>
+                    <div class="data-buttons">
+                        <button id="exportCsvButton">所持データをCSV書き出し</button>
+                        <label for="csvFileInput" class="file-input-label">所持データをCSV読み込み</label>
+                        <input type="file" id="csvFileInput" accept=".csv" style="display: none;">
+                    </div>
+                     <button id="resetCollectionButton">所持カード枚数を全てリセット</button>
+                </div>
+            </div>
+
             <div id="cardCollectionDisplayArea">
                 <p>カードを読み込んでいます...</p>
             </div>
         </div>
 
-        </div>
+    </div>
 
     <script src="cardsData.js"></script>
-    <script src="script.js"></script> </body>
+    <script src="script.js"></script>
+</body>
 </html>
